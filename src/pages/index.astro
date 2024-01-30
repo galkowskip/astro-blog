@@ -1,12 +1,11 @@
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} >
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Astro</h1>
-  </body>
-</html>
+---
+import Layout from "../layouts/Layout.astro";
+
+const pageTitle = "Home Page";
+---
+
+<Layout title={pageTitle}>
+  <h1>Hi, I'm Paweł Gałkowski, and this is my blog</h1>
+
+  <p>This is the home page. There is nothing on it now.</p>
+</Layout>

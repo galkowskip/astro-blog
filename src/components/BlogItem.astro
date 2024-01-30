@@ -1,0 +1,16 @@
+---
+const { title, url, pubDate, description } = Astro.props;
+---
+
+<a
+  href={url}
+  class="border-l-2 border-transparent transition pl-4 cursor-pointer hover:border-orange-400 hover:bg-gradient-to-r hover:from-orange-50 hover:to-transparent hover:scale-105"
+>
+  <span>{title}</span>
+  <br />
+  <small>{pubDate}</small>
+
+  <div class="mt-6s">
+    <p class="text-sm text-gray-600 mt-2">{description}</p>
+  </div>
+</a>

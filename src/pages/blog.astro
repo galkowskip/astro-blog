@@ -1,0 +1,28 @@
+---
+import BlogItem from "../components/BlogItem.astro";
+import Layout from "../layouts/Layout.astro";
+
+const allPosts = await Astro.glob("../pages/posts/*.md");
+---
+
+<Layout title="Home">
+  <h1>Posts List</h1>
+  <p>This is a full list of posts on this blog:</p>
+  <ul class="grid grid-cols-4 gap-x-10 gap-y-3 mt-10">
+    {
+      allPosts.map((post) => {
+        const { title, pubDate, description } = post.frontmatter;
+        const { url } = post;
+
+        return (
+          <BlogItem
+            title={title}
+            pubDate={pubDate}
+            url={url}
+            description={description}
+          />
+        );
+      })
+    }
+  </ul>
+</Layout>
